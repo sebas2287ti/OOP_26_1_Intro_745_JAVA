@@ -29,7 +29,7 @@ public class Workshop {
 
         int[] tablaMultiplicar = new int[limite];
 
-        for (int i = 0; i < limite; i++){
+        for (int i = 0; i < limite; i++) {
             tablaMultiplicar[i] = (i + 1) * numero;
         }
 
@@ -46,7 +46,7 @@ public class Workshop {
 
         int factorialN = 1;
 
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             factorialN *= (i + 1) ;
         }
 
@@ -57,7 +57,17 @@ public class Workshop {
     public boolean esPrimo(int numero) {
         // TODO: Implementar el método para verificar si un número es primo.
         // Ejemplo: Si numero = 7, el resultado debería ser true.
-        return false;
+        if (numero < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     // Método que genera una serie de Fibonacci
