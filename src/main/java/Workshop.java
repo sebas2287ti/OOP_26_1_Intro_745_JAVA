@@ -17,15 +17,15 @@ public class Workshop {
     public int mayorDeTresNumeros(int a, int b, int c) {
         // TODO: Implementar el método para retornar el mayor de los tres números enteros.
         // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
-      return Math.max(a, Math.max(b , c));
+        return Math.max(a, Math.max(b , c));
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
         // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
-        if (numero < 1 || limite < 1)
-            throw new IllegalArgumentException("Numero o El limite deben ser mayores a 0");
+        if (limite < 1)
+            throw new IllegalArgumentException("El limite deben ser mayores a 0");
 
         int[] tablaMultiplicar = new int[limite];
 
