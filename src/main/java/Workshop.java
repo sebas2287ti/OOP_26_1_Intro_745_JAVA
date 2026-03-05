@@ -53,7 +53,7 @@ public class Workshop {
         return factorialN;
     }
 
-    // Método que verifica si un número es primo
+    // Mé   todo que verifica si un número es primo
     public boolean esPrimo(int numero) {
         // TODO: Implementar el método para verificar si un número es primo.
         // Ejemplo: Si numero = 7, el resultado debería ser true.
@@ -76,7 +76,7 @@ public class Workshop {
         // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
         // Lanzar IllegalArgumentException si n es negativo.
         if (n<0)
-            throw new IllegalArgumentException("La serie debe ser mayor a 0");
+            throw new IllegalArgumentException("No se permiten numeros negativos");
 
         if (n == 0){
             return new int[0];
