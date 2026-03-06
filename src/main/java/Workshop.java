@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.List;
 
 public class Workshop {
@@ -135,21 +134,33 @@ public class Workshop {
 
         int numeroMayor = arreglo[0];
 
-        for (int i : arreglo) {
-            if (numeroMayor < i){
-                numeroMayor = i;
+        for (int i = 1; i < arreglo.length ;i++) {
+            if (numeroMayor < arreglo[i]){
+                numeroMayor = arreglo[i];
             }
         }
 
         return numeroMayor;
     }
 
-    // Método que encuentra el elemento menor en un arreglo
+    // Metodo que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
+        if (arreglo == null  || arreglo.length == 0 )
+            throw new IllegalArgumentException("El arreglo debe contener al menos un elemento");
+
+        int numeroMenor = arreglo[0];
+
+        for (int i = 1; i < arreglo.length ;i++) {
+            if (numeroMenor > arreglo[i]){
+                numeroMenor = arreglo[i];
+            }
+        }
+
+        return numeroMenor;
     }
+
 
     // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
