@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.List;
 
 public class Workshop {
@@ -87,7 +88,7 @@ public class Workshop {
         resultadoSerie[0] = 0;
 
         if (n > 1 ) {
-            resultadoSerie[1]= 1;
+            resultadoSerie[1] = 1;
         }
 
         for (int i = 2; i < n; i++){
@@ -182,7 +183,16 @@ public class Workshop {
     public int[] invertirArreglo(int[] arreglo) {
         // TODO: Implementar el método para invertir un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser [5, 4, 3, 2, 1].
-        return new int[0];
+        if (arreglo == null || arreglo.length == 0)
+            return new int[0];
+
+        int[] arrayInvertido = new int[arreglo.length];
+
+        for (int i = 0; i < arreglo.length;i++) {
+            arrayInvertido[i] = arreglo[(arreglo.length-1)-i];
+        }
+
+        return arrayInvertido;
     }
 
     // Método que ordena un arreglo en orden ascendente
