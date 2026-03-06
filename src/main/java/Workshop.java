@@ -107,7 +107,7 @@ public class Workshop {
         int sumaArreglo = 0;
 
         for (int i : arreglo) {
-            sumaArreglo += arreglo[i];
+            sumaArreglo += i;
         }
 
         return sumaArreglo;
