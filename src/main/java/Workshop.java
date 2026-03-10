@@ -353,13 +353,17 @@ public class Workshop {
     public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
         // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
-        return -1;
+        if (cadena == null || cadena.length() == 0)
+            return -1;
+
+        return cadena.indexOf(subcadena);
     }
 
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
+
         return false;
     }
 
