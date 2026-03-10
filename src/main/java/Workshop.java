@@ -238,7 +238,7 @@ public class Workshop {
         }
 
         for (int i = 0; i < arreglo2.length; i++) {
-            sumaArreglos[i+arreglo1.length] = arreglo2[i];
+            sumaArreglos[i + arreglo1.length] = arreglo2[i];
         }
 
         return sumaArreglos;
@@ -248,14 +248,45 @@ public class Workshop {
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         // TODO: Implementar el método para rotar un arreglo n posiciones.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        return new int[0];
+        if (arreglo == null || arreglo.length == 0)
+            return new int[0];
+
+        int[] arregloDezplazado = new int[arreglo.length];
+
+        if (posiciones > 0){
+            for (int i = 0; i < arreglo.length; i++) {
+                if (i + posiciones < arreglo.length){
+                    arregloDezplazado[i] = arreglo[posiciones + i];
+                }
+                else
+                {
+                    arregloDezplazado[i] = arreglo[posiciones + i - arreglo.length];
+                }
+            }
+        }
+
+        if (posiciones < 0){
+            for (int i = 0; i < arreglo.length; i++) {
+                if (i + posiciones >= 0){
+                    arregloDezplazado[i] = arreglo[posiciones + i];
+                }
+                else
+                {
+                    arregloDezplazado[i] = arreglo[arreglo.length + i + posiciones];
+                }
+            }
+        }
+
+        return arregloDezplazado;
     }
 
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         // TODO: Implementar el método para contar el número de caracteres en una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
-        return 0;
+        if (cadena == null || cadena.length()== 0)
+            return 0;
+        return cadena.trim().length();
     }
 
     // Método que invierte una cadena
