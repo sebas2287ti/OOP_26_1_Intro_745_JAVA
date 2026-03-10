@@ -22,7 +22,7 @@ public class WorkshopTest {
     //Test para el area del circulo
     public void testAreaCirculo() {
         assertEquals(Math.PI, tester.areaCirculo(1), 0.001);
-        assertEquals((Math.PI*10), tester.areaCirculo(10), 0.001);;
+        assertEquals((Math.PI*10), tester.areaCirculo(10), 0.001);
         assertEquals(0, tester.areaCirculo(0), 0.001);
     }
 
@@ -255,7 +255,7 @@ public class WorkshopTest {
         // Test 2: Contar palabras en cadena vacía
         assertEquals(0, tester.contarPalabras(""));
         // Test 3: Contar palabras con múltiples espacios
-        assertEquals(4, tester.contarPalabras("Hola   mundo  hoy"));
+        assertEquals(3, tester.contarPalabras("Hola   mundo  hoy"));
     }
 
     // Test para el método convertirAMayusculas
