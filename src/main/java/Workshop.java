@@ -284,7 +284,7 @@ public class Workshop {
     public int contarCaracteres(String cadena) {
         // TODO: Implementar el método para contar el número de caracteres en una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
-        if (cadena == null || cadena.length()== 0)
+        if (cadena == null || cadena.length() == 0)
             return 0;
         return cadena.trim().length();
     }
@@ -293,7 +293,15 @@ public class Workshop {
     public String invertirCadena(String cadena) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
-        return "";
+        if (cadena == null || cadena.length() == 0)
+            return cadena;
+
+        String inversa = "";
+
+        for (int i = cadena.length() - 1; i>=0;i--) {
+            inversa += cadena.charAt(i);
+        }
+        return inversa;
     }
 
     // Método que verifica si una cadena es un palíndromo
