@@ -270,7 +270,16 @@ public class Workshop {
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
         if (arreglo == null || arreglo.length == 0)
             return  new int[0];
-        return new int[0];
+
+        if (((posiciones % arreglo.length + arreglo.length) % arreglo.length) == 0)
+            return arreglo;
+
+        int[] arregloOrdenado = new int[arreglo.length];
+
+        for (int i = 0; i < arreglo.length; i++) {
+            arregloOrdenado[(i + ((posiciones % arreglo.length + arreglo.length) % arreglo.length)) % arreglo.length] = arreglo[i];
+        }
+        return arregloOrdenado;
     }
 
     // Método que cuenta los caracteres en una cadena
