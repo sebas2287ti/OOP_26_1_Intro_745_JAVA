@@ -221,7 +221,27 @@ public class Workshop {
     public int[] eliminarDuplicados(int[] arreglo) {
         // TODO: Implementar el método para eliminar los duplicados de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        if (arreglo == null || arreglo.length == 0)
+            return new int[0];
+
+        int k = 0;
+
+        for (int i = 0; i < arreglo.length; i++) {
+            boolean duplicado = false;
+            for (int j = 0; j < i; j++) {
+                if(arreglo[i] == arreglo[j]){
+                    duplicado = true;
+                    break;
+                }
+            }
+            if (!duplicado) {
+                arreglo[k] = arreglo[i];
+                k++;
+            }
+        }
+        int[] resultado = new int[k];
+        for (int i = 0; i < k; i++) resultado[i] = arreglo[i];
+        return resultado;
     }
 
     // Método que combina dos arreglos en uno solo
@@ -248,36 +268,7 @@ public class Workshop {
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         // TODO: Implementar el método para rotar un arreglo n posiciones.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        if (arreglo == null || arreglo.length == 0)
-            return new int[0];
-
-        int[] arregloDezplazado = new int[arreglo.length];
-
-        if (posiciones > 0){
-            for (int i = 0; i < arreglo.length; i++) {
-                if (i + posiciones < arreglo.length){
-                    arregloDezplazado[i] = arreglo[posiciones + i];
-                }
-                else
-                {
-                    arregloDezplazado[i] = arreglo[posiciones + i - arreglo.length];
-                }
-            }
-        }
-
-        if (posiciones < 0){
-            for (int i = 0; i < arreglo.length; i++) {
-                if (i + posiciones >= 0){
-                    arregloDezplazado[i] = arreglo[posiciones + i];
-                }
-                else
-                {
-                    arregloDezplazado[i] = arreglo[arreglo.length + i + posiciones];
-                }
-            }
-        }
-
-        return arregloDezplazado;
+        return new int[0];
     }
 
     // Método que cuenta los caracteres en una cadena
@@ -363,7 +354,6 @@ public class Workshop {
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-
         return false;
     }
 
