@@ -464,19 +464,19 @@ public class Workshop {
         if (eleccionComputadora.equals(eleccionUsuario))
             return "Empate";
 
-        if ((eleccionUsuario.equals("Piedra")) && eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto")){
+        if ((eleccionUsuario.equals("Piedra")) && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))){
             return "Ganaste";
         }
-        if ((eleccionUsuario.equals("Papel")) && eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock")){
+        if ((eleccionUsuario.equals("Papel")) && (eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock"))){
             return "Ganaste";
         }
-        if ((eleccionUsuario.equals("Tijera")) && eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto")){
+        if ((eleccionUsuario.equals("Tijera")) && (eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto"))){
             return "Ganaste";
         }
-        if ((eleccionUsuario.equals("Lagarto")) && eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel")){
+        if ((eleccionUsuario.equals("Lagarto")) && (eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel"))){
             return "Ganaste";
         }
-        if ((eleccionUsuario.equals("Spock")) && eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra")){
+        if ((eleccionUsuario.equals("Spock")) && (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra"))){
             return "Ganaste";
         }
         return "Perdiste";
@@ -502,7 +502,32 @@ Paper disproves Spock
 Spock vaporizes Rock
 Rock crushes Scissors
          */
-        return "";
+        if (game == null || game.length == 0)
+            return "Eleccion no existe";
+
+        String jugador1 = game[0];
+        String jugador2 = game[1];
+
+        if (jugador1.equals(jugador2))
+            return "Empate";
+
+        if ((jugador1.equals("R")) && (jugador2.equals("S") || jugador2.equals("L"))){
+            return "Player 1";
+        }
+        if ((jugador1.equals("P")) && (jugador2.equals("R") || jugador2.equals("V"))){
+            return "Player 1";
+        }
+        if ((jugador1.equals("S")) && (jugador2.equals("P") || jugador2.equals("L"))){
+            return "Player 1";
+        }
+        if ((jugador1.equals("L")) && (jugador2.equals("V") || jugador2.equals("P"))){
+            return "Player 1";
+        }
+        if ((jugador1.equals("V")) && (jugador2.equals("S") || jugador2.equals("R"))){
+            return "Player 1";
+        }
+
+        return "Player 2";
     }
 
     public double areaCirculo(double radio) {
