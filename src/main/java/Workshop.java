@@ -314,7 +314,7 @@ public class Workshop {
         }
 
         int izq = 0;
-        int der = cadena.length() - 1;
+        int der = cadenaLimpia.length() - 1;
 
         while (izq < der){
             if(cadenaLimpia.charAt(izq) != cadenaLimpia.charAt(der)){
@@ -378,7 +378,25 @@ public class Workshop {
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-        return false;
+        if (correo == null || correo.isEmpty() || correo.contains(" "))
+            return false;
+
+        int arroba = correo.indexOf('@');
+        int punto = correo.lastIndexOf('.');
+        int contadorArrobas = 0;
+
+        for (int i = 0; i < correo.length(); i++) {
+            char letra = correo.charAt(i);
+            if (letra == '@')
+                contadorArrobas++;
+
+            boolean esLetraNumero = (letra >= 'a' && letra <= 'z') || (letra >= 'A' && letra <= 'Z') || (letra >= '0' && letra <= '9');
+            boolean esSimboloPermitido = (letra == '@' || letra == '.' || letra == '_' || letra == '-' || letra == '+');
+
+            if (!esLetraNumero && !esSimboloPermitido) return false;
+        }
+
+        return contadorArrobas == 1 && arroba > 0 && punto > arroba + 1 && punto < correo.length() - 1;
     }
 
     // Método que calcula el promedio de una lista de números
@@ -432,6 +450,7 @@ public class Workshop {
         // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
         return "";
     }
+
 
     public String pptls2(String game[]) {
         //Retornar player ganador o empate
