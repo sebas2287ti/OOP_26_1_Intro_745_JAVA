@@ -453,11 +453,33 @@ public class Workshop {
         // - Tijera vence a Papel y Lagarto
         // - Lagarto vence a Spock y Papel
         // - Spock vence a Tijera y Piedra
-
-
         // El método debe retornar un mensaje indicando el resultado del juego.
         // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+        if (eleccionUsuario == null)
+            return "Eleccion no existe";
+
+        String[] jugadas = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        String eleccionComputadora = jugadas[(int) Math.random() * 5];
+
+        if (eleccionComputadora.equals(eleccionUsuario))
+            return "Empate";
+
+        if ((eleccionUsuario.equals("Piedra")) && eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto")){
+            return "Ganaste";
+        }
+        if ((eleccionUsuario.equals("Papel")) && eleccionComputadora.equals("Piedra") || eleccionComputadora.equals("Spock")){
+            return "Ganaste";
+        }
+        if ((eleccionUsuario.equals("Tijera")) && eleccionComputadora.equals("Papel") || eleccionComputadora.equals("Lagarto")){
+            return "Ganaste";
+        }
+        if ((eleccionUsuario.equals("Lagarto")) && eleccionComputadora.equals("Spock") || eleccionComputadora.equals("Papel")){
+            return "Ganaste";
+        }
+        if ((eleccionUsuario.equals("Spock")) && eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Piedra")){
+            return "Ganaste";
+        }
+        return "Perdiste";
     }
 
 
