@@ -268,6 +268,8 @@ public class Workshop {
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
         // TODO: Implementar el método para rotar un arreglo n posiciones.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
+        if (arreglo == null || arreglo.length == 0)
+            return  new int[0];
         return new int[0];
     }
 
@@ -299,7 +301,29 @@ public class Workshop {
     public boolean esPalindromo(String cadena) {
         // TODO: Implementar el método para verificar si una cadena es un palíndromo.
         // Ejemplo: Si cadena = "madam", el resultado debería ser true.
-        return false;
+        if (cadena == null || cadena.length() == 0)
+            return true;
+
+        String cadenaLimpia = "";
+
+        for (int i = 0; i < cadena.length(); i++) {
+            char letra = cadena.charAt(i);
+            if (letra != ' ') {
+                cadenaLimpia += Character.toLowerCase(letra);
+            }
+        }
+
+        int izq = 0;
+        int der = cadena.length() - 1;
+
+        while (izq < der){
+            if(cadenaLimpia.charAt(izq) != cadenaLimpia.charAt(der)){
+                return false;
+            }
+            izq++;
+            der--;
+        }
+        return true;
     }
 
     // Método que cuenta el número de palabras en una cadena
